@@ -1,6 +1,4 @@
 # TurboNotes.AI - EAS Build Fix Script for Windows
-# This script clears caches and fixes common Windows EAS build issues
-
 Write-Host "======================================" -ForegroundColor Cyan
 Write-Host "TurboNotes.AI EAS Build Fix" -ForegroundColor Cyan
 Write-Host "======================================" -ForegroundColor Cyan
@@ -63,4 +61,3 @@ if ($rebuild -eq 'y' -or $rebuild -eq 'Y') {
 Write-Host ""
 Write-Host "Press any key to exit..."
 $null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-
