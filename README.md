@@ -58,9 +58,37 @@ npm run ios
 
 #### Production Build with EAS
 ```bash
-eas build --platform android
-eas build --platform ios
+eas build --platform android --profile preview
+eas build --platform android --profile production
+eas build --platform ios --profile preview
+eas build --platform ios --profile production
 ```
+
+### Troubleshooting EAS Build Issues
+
+If you encounter `EPERM: operation not permitted` errors on Windows:
+
+1. **Clear EAS cache:**
+   ```powershell
+   Remove-Item -Path "$env:LOCALAPPDATA\Temp\eas-cli-nodejs" -Recurse -Force -ErrorAction SilentlyContinue
+   ```
+
+2. **Close all processes that might lock files:**
+   - Close your IDE (VS Code, Cursor, etc.)
+   - Stop Metro bundler
+   - Close any file explorers with the project open
+
+3. **Run EAS build again:**
+   ```bash
+   eas build -p android --profile preview
+   ```
+
+4. **If issues persist, try cleaning node_modules:**
+   ```bash
+   Remove-Item -Recurse -Force node_modules
+   Remove-Item -Force package-lock.json
+   npm install
+   ```
 
 ## Project Structure
 
