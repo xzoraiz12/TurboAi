@@ -6,13 +6,31 @@
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "cache": {
+        "default": true
+      },
+      "env": {
+        "EAS_NO_TELEMETRY": "1"
+      }
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "cache": {
+        "default": true
+      },
+      "env": {
+        "EAS_NO_TELEMETRY": "1"
+      }
     },
     "production": {
-      "autoIncrement": true
+      "autoIncrement": true,
+      "cache": {
+        "default": true
+      },
+      "env": {
+        "EAS_NO_TELEMETRY": "1"
+      }
     }
   },
   "submit": {
